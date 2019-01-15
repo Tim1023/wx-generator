@@ -1,0 +1,51 @@
+{
+  "name": "wx-generator",
+  "description": "Weapp page/component generator cli",
+  "version": "0.0.0",
+  "author": "Tim",
+  "bin": {
+    "wx-generator": "./bin/run"
+  },
+  "bugs": "https://github.com/tim1023/wx-generator/issues",
+  "dependencies": {
+    "@oclif/command": "^1",
+    "@oclif/config": "^1",
+    "@oclif/plugin-help": "^2"
+  },
+  "devDependencies": {
+    "@oclif/dev-cli": "^1",
+    "eslint": "^5.5",
+    "eslint-config-oclif": "^3.1",
+    "globby": "^8"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    "/bin",
+    "/npm-shrinkwrap.json",
+    "/oclif.manifest.json",
+    "/src"
+  ],
+  "homepage": "https://github.com/tim1023/wx-generator",
+  "keywords": [
+    "oclif"
+  ],
+  "license": "MIT",
+  "main": "src/index.js",
+  "oclif": {
+    "commands": "./src/commands",
+    "bin": "wx-generator",
+    "plugins": [
+      "@oclif/plugin-help"
+    ]
+  },
+  "repository": "tim1023/wx-generator",
+  "scripts": {
+    "postpack": "rm -f oclif.manifest.json",
+    "posttest": "eslint .",
+    "prepack": "oclif-dev manifest && oclif-dev readme",
+    "test": "echo NO TESTS",
+    "version": "oclif-dev readme && git add README.md"
+  }
+}
