@@ -1,13 +1,14 @@
-const {Command, flags} = require('@oclif/command')
+const {Command} = require('@oclif/command')
+const createTemplate = require('../api/create-template')
 
 class CreateCommand extends Command {
   async run() {
-    const {args: {type, name}, flags: {simple}} = this.parse(CreateCommand)
+    const {args: {type, name}} = this.parse(CreateCommand)
     if (!type) {
       this.error('please specify the type')
       return
     }
-    if (type !== ('page' || 'component')) {
+    if (type !== 'page' && type !== 'component') {
       this.error(`invalid type name '${type}' please specify the correct type, eg: page or component `)
       return
     }
@@ -15,7 +16,12 @@ class CreateCommand extends Command {
       this.error('please specify the template name')
       return
     }
-    this.log(`[Success] Added new ${type} ${name} ${simple ? 'with simple mood' : ''}`)
+    try {
+      await createTemplate(type, name)
+      this.log(`[Success] Added new ${type} ${name}`)
+    } catch (error) {
+      return this.error(error)
+    }
   }
 }
 CreateCommand.args = [
@@ -26,10 +32,5 @@ CreateCommand.description = `Describe the command here
 ...
 Extra documentation goes here
 `
-
-CreateCommand.flags = {
-  name: flags.string({char: 'n', description: 'template name'}),
-  simple: flags.boolean({char: 's', description: 'template mood simple'}),
-}
 
 module.exports = CreateCommand

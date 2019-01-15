@@ -1,0 +1,3 @@
+<view>
+  Component <%= basename %>
+</view>

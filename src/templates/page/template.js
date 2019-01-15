@@ -1,0 +1,8 @@
+Page({
+  data: {
+  },
+  onShow: {
+  },
+  onLoad() {
+  },
+});

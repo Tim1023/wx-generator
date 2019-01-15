@@ -10,7 +10,9 @@
   "dependencies": {
     "@oclif/command": "^1",
     "@oclif/config": "^1",
-    "@oclif/plugin-help": "^2"
+    "@oclif/plugin-help": "^2",
+    "lodash": "^4.17.11",
+    "mkdirp": "^0.5.1"
   },
   "devDependencies": {
     "@oclif/dev-cli": "^1",
