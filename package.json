@@ -1,7 +1,7 @@
 {
   "name": "wx-generator",
   "description": "Weapp page/component generator cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Tim",
   "bin": {
     "wx-generator": "./bin/run"
