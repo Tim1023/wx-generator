@@ -28,9 +28,7 @@ CreateCommand.args = [
   {name: 'type'},
   {name: 'name'},
 ]
-CreateCommand.description = `Describe the command here
-...
-Extra documentation goes here
+CreateCommand.description = `TYPE can be 'page' or 'component', NAME will be the generated dir and file name.
 `
 
 module.exports = CreateCommand

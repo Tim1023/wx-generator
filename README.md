@@ -29,45 +29,19 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`wx-generator create`](#wx-generator-create)
-* [`wx-generator hello`](#wx-generator-hello)
+* [`wx-generator create [TYPE] [NAME]`](#wx-generator-create-type-name)
 * [`wx-generator help [COMMAND]`](#wx-generator-help-command)
 
-## `wx-generator create`
+## `wx-generator create [TYPE] [NAME]`
 
-Describe the command here
+TYPE can be 'page' or 'component', NAME will be the generated dir and file name.
 
 ```
 USAGE
-  $ wx-generator create
-
-OPTIONS
-  -n, --name=name  name to print
-
-DESCRIPTION
-  ...
-  Extra documentation goes here
+  $ wx-generator create [TYPE] [NAME]
 ```
 
 _See code: [src/commands/create.js](https://github.com/tim1023/wx-generator/blob/v1.0.1/src/commands/create.js)_
-
-## `wx-generator hello`
-
-Describe the command here
-
-```
-USAGE
-  $ wx-generator hello
-
-OPTIONS
-  -n, --name=name  name to print
-
-DESCRIPTION
-  ...
-  Extra documentation goes here
-```
-
-_See code: [src/commands/hello.js](https://github.com/tim1023/wx-generator/blob/v1.0.1/src/commands/hello.js)_
 
 ## `wx-generator help [COMMAND]`
 
