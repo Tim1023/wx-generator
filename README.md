@@ -20,7 +20,7 @@ $ npm install -g wx-generator
 $ wx-generator COMMAND
 running command...
 $ wx-generator (-v|--version|version)
-wx-generator/1.0.4 darwin-x64 node-v10.13.0
+wx-generator/1.0.5 darwin-x64 node-v10.13.0
 $ wx-generator --help [COMMAND]
 USAGE
   $ wx-generator COMMAND
@@ -41,7 +41,7 @@ USAGE
   $ wx-generator create [TYPE] [NAME]
 ```
 
-_See code: [src/commands/create.js](https://github.com/tim1023/wx-generator/blob/v1.0.4/src/commands/create.js)_
+_See code: [src/commands/create.js](https://github.com/tim1023/wx-generator/blob/v1.0.5/src/commands/create.js)_
 
 ## `wx-generator help [COMMAND]`
 
