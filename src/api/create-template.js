@@ -5,14 +5,18 @@ const fs = require('fs')
 const {resolve, join} = require('path')
 const filesTypes = ['wxml', 'js', 'wxss', 'json']
 
+const currentPath = process.cwd()
+
 function registerPage(basename) {
-  const appDir = findup.sync('app.json')
-  if (!appDir) {
+  const appPath = findup.sync('app.json')
+  if (!appPath) {
     throw new Error('Can\'t find app.json')
   }
-  const data = fs.readFileSync(appDir, 'utf8')
+  const data = fs.readFileSync(appPath, 'utf8')
   const content = JSON.parse(data.toString())
-  const pagePath = `pages/${basename}/${basename}`
+  const rootPath = appPath.replace('app.json', '')
+  const basePath = currentPath.replace(rootPath, '')
+  const pagePath = `${basePath}/${basename}/${basename}`
   if (!content.pages) {
     content.pages = []
   }
@@ -20,13 +24,12 @@ function registerPage(basename) {
     throw new Error('Page already exist in app.json')
   }
   content.pages.push(pagePath)
-  fs.writeFileSync(appDir, JSON.stringify(content, null, 2))
+  fs.writeFileSync(appPath, JSON.stringify(content, null, 2))
 }
 
 function createFiles(type, basename) {
   filesTypes.forEach(fileType => {
     fileType = fileType.replace(/^\./g, '')
-    const currentPath = process.cwd()
     const filePath = resolve(`${currentPath}/${basename}`, `${basename}.${fileType}`)
 
     if (fs.existsSync(filePath)) {
